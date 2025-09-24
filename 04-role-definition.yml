@@ -1,0 +1,22 @@
+---
+- name: Ensure custom role definition exists 
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ./vars/aap.yml
+    - ./vars/user.yml
+    - ./vars/all.yml
+  tasks:
+    - name: Custom role present
+      ansible.platform.role_definition:
+        name: "{{ custom_role_name }}"
+        description: "{{ custom_role_description }}"
+        content_type: awx.inventory
+        permissions:
+          - awx.view_inventory
+          - awx.change_inventory
+        state: present
+        aap_hostname: "{{ aap_hostname }}"
+        aap_username: "{{ aap_username }}"
+        aap_password: "{{ aap_password }}"
+        aap_validate_certs: "{{ aap_validate_certs }}"

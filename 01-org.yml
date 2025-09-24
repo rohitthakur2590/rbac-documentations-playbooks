@@ -1,0 +1,17 @@
+---
+- name: Ensure organization exists
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ./vars/aap.yml
+    - ./vars/user.yml
+    - ./vars/all.yml
+  tasks:
+    - name: Organization present
+      ansible.platform.organization:
+        name: "{{ org_name }}"
+        state: present
+        aap_hostname: "{{ aap_hostname }}"
+        aap_username: "{{ aap_username }}"
+        aap_password: "{{ aap_password }}"
+        aap_validate_certs: "{{ aap_validate_certs }}"
