@@ -1,0 +1,25 @@
+aap_hostname: "https://<gateway-ip>"
+aap_username: "admin"
+aap_validate_certs: false
+aap_request_timeout: 60
+aap_password: "password"
+
+
+platform_username: "admin"
+platform_password: "Admin!Password!Gw"
+validate_certs: false
+
+org_name: "Demo-Org"
+team_name: "Demo-Team"
+user_username: "demo.user"
+user_email: "demo.user@example.com"
+user_password: "Passw0rd!Demo"
+
+# Role names as they exist in your platform
+role_for_team_in_org: "Organization Inventory Admin"  # "Executor"
+role_for_user_in_org: "Organization Auditor"
+role_for_user_in_team: "Auditor"        # if your platform supports team-scoped roles
+
+# Optional: a custom role definition you want to create
+custom_role_name: "NetOps ReadOnly"
+custom_role_description: "Read-only access to network objects"
