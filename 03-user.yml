@@ -3,8 +3,6 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - ./vars/aap.yml
-    - ./vars/user.yml
     - ./vars/all.yml
   tasks:
     - name: User present
