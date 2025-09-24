@@ -1,0 +1,21 @@
+---
+- name: Assign role to team in org
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - ./vars/aap.yml
+    - ./vars/user.yml
+    - ./vars/all.yml
+  tasks:
+    - name: Team gets role in org
+      ansible.platform.role_team_assignment:
+        team: "{{ team_name }}"
+        assignment_objects:
+          - name: "{{ org_name }}"
+            type: "organizations"
+        role_definition: "{{ role_for_team_in_org }}"
+        state: present
+        aap_hostname: "{{ aap_hostname }}"
+        aap_username: "{{ aap_username }}"
+        aap_password: "{{ aap_password }}"
+        aap_validate_certs: "{{ aap_validate_certs }}"
