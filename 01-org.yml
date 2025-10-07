@@ -9,7 +9,7 @@
       ansible.platform.organization:
         name: "{{ org_name }}"
         state: present
-        aap_hostname: "{{ aap_hostname }}"
-        aap_username: "{{ aap_username }}"
-        aap_password: "{{ aap_password }}"
-        aap_validate_certs: "{{ aap_validate_certs }}"
+        # aap_hostname: "{{ aap_hostname }}"
+        # aap_username: "{{ aap_username }}"
+        # aap_password: "{{ aap_password }}"
+        # aap_validate_certs: "{{ aap_validate_certs }}"
